@@ -1,0 +1,96 @@
+
+
+<div class="wrapper">
+   
+
+	<div class="addressForm">
+<h4 class ="success_msg" style="font-size: 30px; margin-top: 550px;">{{successMsg}}</h4>
+<div  *ngIf='showWrapper'>
+		            <h3>SHIPPING ADDRESS</h3>
+
+
+            <form name="ngForm" class="well form-horizontal" [formGroup]="shippingAddress">
+                          <fieldset>
+                              <div class="form-group">
+                                 
+
+                                  <label class="col-md-3 control-label">NAME</label>
+                                  <div class="col-md-6 inputGroupContainer">
+
+                                      <input id="name" class="form-control" type="text" required  formControlName="name" >
+                                     
+                                  </div>
+
+                             </div>
+
+                              
+
+                              <div class="form-group">
+                                  
+
+                                  <label class="col-md-3 control-label">ADDRESS</label>
+                                  <div class="col-md-6 inputGroupContainer">
+
+                                      <input id="address" class="form-control"  type="text" required formControlName="address">
+                                     
+                                  </div>
+
+                                  </div>
+ 							<div class="form-group">
+                                  
+                                <div class="row">   
+                                  <label class="col-md-2 control-label">CITY</label>
+                                  <label class="col-md-2 control-label">STATE</label>
+                                  <label class="col-md-2 control-label">POSTCODE</label>
+                             </div>
+                             <div class="row">
+
+                                  <div class="col-md-2 inputGroupContainer">
+
+                                      <input id="city" class="form-control"  type="text" required formControlName="city">
+                                     
+                                  </div>
+                                  <div class="col-md-2 inputGroupContainer">
+
+                                      <input id="state" class="form-control"  type="text" required formControlName="state">
+                                     
+                                  </div>
+                                  <div class="col-md-2 inputGroupContainer">
+
+                                      <input id="postcode" class="form-control"  type="number" required formControlName="postcode">
+                                     
+                                  </div>
+                              </div>
+
+                                  </div>
+
+                              
+
+                              <div class="form-group">
+                               
+
+                                  <label class="col-md-3 control-label">EMAIL ADDRESS</label>
+                                  <div class="col-md-6 inputGroupContainer">
+
+                                      <input id="emailAddress" class="form-control" type="email" required formControlName="emailAddress">
+                                     
+                                  </div>
+</div>
+  <div class="form-group">
+                               
+
+                                  <label class="col-md-3 control-label">PHONE NUMBER</label>
+                                  <div class="col-md-6 inputGroupContainer">
+
+                                      <input id="phoneNumber" class="form-control" type="number" required formControlName="phoneNumber">
+                                     
+                                  </div>
+</div>
+</fieldset>
+    <button type="button"  class="btn btn-success" target="_blank" (click)=placeOrder()>PLACE ORDER</button>
+
+</form>	
+</div>
+</div>
+<cart *ngIf='showWrapper'></cart>
+</div>  

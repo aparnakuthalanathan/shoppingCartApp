@@ -1,0 +1,20 @@
+
+
+.addressForm{
+    width :100%;
+    margin-left: 10%;
+    margin-top: 100px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+.form-horizontal .control-label{
+   text-align:left ; 
+
+}
+.success_msg{
+    color:green; font-size: 14px;font-weight: 500; margin-left: 20px !important; margin-top: 10px !important;
+}
+cart{
+  position: relative;
+  margin-top: 100px;
+}

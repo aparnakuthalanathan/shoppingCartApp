@@ -1,0 +1,39 @@
+<div>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="toggle-sidebar-left" (click)="isCollapsed = !isCollapsed">
+                <i class="fas fa-shopping-cart" style="font-size:25px; margin-left: 150px"></i><span class="badge badge-success">{{totalQty}}</span>
+               
+            </a>
+
+    </nav>
+     <nav class="collapse navbar-collapse" id="sidebar" [ngbCollapse]="isCollapsed">
+    <div class="sidebar-header">
+            <h3 style="text-align: center">Cart</h3>
+             <p style="text-align: center; color:grey" *ngIf = "totalQty == 0">Cart is Empty</p>
+        </div>
+     <div *ngFor="let item of productItems">
+      <div class="cart"  *ngIf = "item.selectedQty >= 1">
+        <div class="cartItem" >
+          <div>
+        <img src="../../../assets/img/{{item.image}}.jpg"  width="50vw" height="50vw"></div> 
+        <div style="font-size: 10px">{{item.name}}</div>
+      </div>
+        <div >
+          <div  class="qtyBtn" ><a (click)= "remove(item)" style="float:left;"><i class="fa fa-minus-square" style="font-size:15px;"></i></a><span>{{item.selectedQty}}</span><a (click) = "plus(item)" style="float:right;"><i class="fa fa-plus-square" style="font-size:15px;"></i></a></div>
+        </div>
+        <div>&#x20b9;{{item.price * item.selectedQty}}</div>  
+
+      </div>
+     </div>
+
+     <div class="sidebar-footer" *ngIf = "totalQty > 0" style="border-top: 1px solid green">
+            <span  >Total</span>
+            <span style="float: right">{{totalAmount}}</span>
+
+        </div>
+
+    <button type="button"  style="float:right; margin-top: 20px" *ngIf = "totalQty > 0" class="btn btn-success" routerLink="/shipping-address/shippingAddress">CHECKOUT</button>
+
+    
+  </nav>
+</div>

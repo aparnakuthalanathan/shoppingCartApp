@@ -1,0 +1,27 @@
+<div class="sidenav">
+  <div class="menu" (click) = "selectedCategory = 'ALL'">ALL</div>
+  <div class="menu" (click) = "selectedCategory = 'HANDBAGS'">HANDBAGS</div>
+  <div class="menu" (click) = "selectedCategory = 'SLING BAGS'">SLING BAGS</div>
+  <div class="menu" (click) = "selectedCategory = 'WALLETS'">WALLETS</div>
+  <div class="menu" (click) = "selectedCategory = 'CLUTCHES'">CLUTCHES</div>
+
+</div>
+<div class="vl"></div>
+<div class="main">
+  <h4>{{selectedCategory}}</h4>
+ <div id="handbag">
+    <div class="product-grid" >
+    <div class="product-col" *ngFor="let item of filter(productItems,selectedCategory)">
+        <div class="productImage item1" >
+          <img src="../../../assets/img/{{item.image}}.jpg" width="100vw" height="100vw"></div> 
+        <h5 class = "productName item1">{{item.name}}</h5>
+        <div>&#x20b9;{{item.price}}</div>  
+        <div >
+          <button type="button"  *ngIf = "item.selectedQty < 1" class="btn btn-success" (click) = add(item)>ADD</button>
+          <div  class="qtyBtn" *ngIf = "item.selectedQty >= 1"><a (click)= "remove(item)" style="float:left;"><i class="fa fa-minus-square" style="font-size:18px;"></i></a><span> {{item.selectedQty}} </span><a (click) = "plus(item)" style="float:right;"><i class="fa fa-plus-square" style="font-size:18px;"></i></a></div>
+        </div>
+     </div>
+   
+    </div>
+    </div>
+</div>
